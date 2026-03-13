@@ -14,6 +14,20 @@ A curated catalog of reusable `SKILL.md` instructions for Codex/agent workflows.
 - Application source code
 - Runtime tooling or executables
 
+## Install (one command)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yorrany/Skills_Codex/main/scripts/install.sh | sh
+```
+
+This installs the repository into `~/.codex/skills` (or `$CODEX_HOME/skills`) and keeps it up to date on re-run.
+
+## Install (offline / no curl)
+
+```bash
+git clone https://github.com/yorrany/Skills_Codex.git ~/.codex/skills
+```
+
 ## Quick Start
 
 **1. Find a skill**
