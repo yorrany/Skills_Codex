@@ -1,0 +1,3 @@
+interface:
+  display_name: "Go Concurrency Patterns"
+  short_description: "Help with Go Concurrency Patterns tasks"

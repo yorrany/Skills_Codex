@@ -1,0 +1,3 @@
+interface:
+  display_name: "Astropy"
+  short_description: "Help with Astropy tasks and workflows"

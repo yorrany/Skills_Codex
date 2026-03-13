@@ -1,0 +1,3 @@
+interface:
+  display_name: "Crewai"
+  short_description: "Help with Crewai tasks and workflows"

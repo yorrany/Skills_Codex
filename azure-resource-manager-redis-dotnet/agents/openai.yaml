@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Resource Manager Redis Dotnet"
+  short_description: "Help with Azure Resource Manager Redis Dotnet tasks"

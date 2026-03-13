@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Functions"
+  short_description: "Help with Azure Functions tasks"

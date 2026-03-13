@@ -1,0 +1,3 @@
+interface:
+  display_name: "Airflow Dag Patterns"
+  short_description: "Help with Airflow Dag Patterns tasks"

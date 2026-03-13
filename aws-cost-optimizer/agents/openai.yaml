@@ -1,0 +1,3 @@
+interface:
+  display_name: "Aws Cost Optimizer"
+  short_description: "Help with Aws Cost Optimizer tasks"

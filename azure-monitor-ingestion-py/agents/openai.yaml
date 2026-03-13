@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Monitor Ingestion Py"
+  short_description: "Help with Azure Monitor Ingestion Py tasks"

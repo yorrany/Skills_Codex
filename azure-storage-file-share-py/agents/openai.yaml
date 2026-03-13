@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Storage File Share Py"
+  short_description: "Help with Azure Storage File Share Py tasks"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Keyvault Py"
+  short_description: "Help with Azure Keyvault Py tasks"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Postgres Ts"
+  short_description: "Help with Azure Postgres Ts tasks"

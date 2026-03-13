@@ -1,0 +1,3 @@
+interface:
+  display_name: "Odoo Migration Helper"
+  short_description: "Help with Odoo Migration Helper tasks"

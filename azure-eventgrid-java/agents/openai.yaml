@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Eventgrid Java"
+  short_description: "Help with Azure Eventgrid Java tasks"

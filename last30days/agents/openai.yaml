@@ -1,0 +1,3 @@
+interface:
+  display_name: "Last30days"
+  short_description: "Help with Last30days tasks"

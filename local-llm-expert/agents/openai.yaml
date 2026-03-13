@@ -1,0 +1,3 @@
+interface:
+  display_name: "Local LLM Expert"
+  short_description: "Help with Local LLM Expert tasks"

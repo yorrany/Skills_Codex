@@ -1,0 +1,3 @@
+interface:
+  display_name: "Langfuse"
+  short_description: "Help with Langfuse tasks and workflows"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Hugging Face Tool Builder"
+  short_description: "Help with Hugging Face Tool Builder tasks"

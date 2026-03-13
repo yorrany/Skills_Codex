@@ -1,0 +1,3 @@
+interface:
+  display_name: "Odoo Docker Deployment"
+  short_description: "Help with Odoo Docker Deployment tasks"

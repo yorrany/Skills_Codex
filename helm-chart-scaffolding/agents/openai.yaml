@@ -1,0 +1,3 @@
+interface:
+  display_name: "Helm Chart Scaffolding"
+  short_description: "Help with Helm Chart Scaffolding tasks"

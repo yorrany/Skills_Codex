@@ -1,0 +1,3 @@
+interface:
+  display_name: "Microsoft Azure Webjobs Extensions Authentication Events Dotnet"
+  short_description: "Microsoft Azure Webjobs Extensions Authentication Events helper"

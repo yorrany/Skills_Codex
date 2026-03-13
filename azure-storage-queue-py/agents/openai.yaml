@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Storage Queue Py"
+  short_description: "Help with Azure Storage Queue Py tasks"

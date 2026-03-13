@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Resource Manager Postgresql Dotnet"
+  short_description: "Help with Azure Resource Manager Postgresql Dotnet tasks"

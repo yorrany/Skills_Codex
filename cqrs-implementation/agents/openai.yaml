@@ -1,0 +1,3 @@
+interface:
+  display_name: "Cqrs Implementation"
+  short_description: "Help with Cqrs Implementation tasks"

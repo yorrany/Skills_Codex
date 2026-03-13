@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Monitor Ingestion Java"
+  short_description: "Help with Azure Monitor Ingestion Java tasks"

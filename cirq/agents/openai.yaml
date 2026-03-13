@@ -1,0 +1,3 @@
+interface:
+  display_name: "Cirq"
+  short_description: "Help with Cirq tasks and workflows"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Django Perf Review"
+  short_description: "Help with Django Perf Review tasks"

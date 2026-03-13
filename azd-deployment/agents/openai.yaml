@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azd Deployment"
+  short_description: "Help with Azd Deployment tasks"

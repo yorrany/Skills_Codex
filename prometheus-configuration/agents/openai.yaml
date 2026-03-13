@@ -1,0 +1,3 @@
+interface:
+  display_name: "Prometheus Configuration"
+  short_description: "Help with Prometheus Configuration tasks"

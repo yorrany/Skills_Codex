@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Keyvault Keys Rust"
+  short_description: "Help with Azure Keyvault Keys Rust tasks"

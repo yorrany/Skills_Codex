@@ -1,0 +1,3 @@
+interface:
+  display_name: "Powershell Windows"
+  short_description: "Help with Powershell Windows tasks"

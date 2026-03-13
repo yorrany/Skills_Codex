@@ -1,0 +1,3 @@
+interface:
+  display_name: "K8s Manifest Generator"
+  short_description: "Help with K8s Manifest Generator tasks"

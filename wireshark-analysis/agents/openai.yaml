@@ -1,0 +1,3 @@
+interface:
+  display_name: "Wireshark Analysis"
+  short_description: "Help with Wireshark Analysis tasks"

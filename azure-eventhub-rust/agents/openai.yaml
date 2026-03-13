@@ -1,0 +1,3 @@
+interface:
+  display_name: "Azure Eventhub Rust"
+  short_description: "Help with Azure Eventhub Rust tasks"

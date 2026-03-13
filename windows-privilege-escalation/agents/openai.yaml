@@ -1,0 +1,3 @@
+interface:
+  display_name: "Windows Privilege Escalation"
+  short_description: "Help with Windows Privilege Escalation tasks"
