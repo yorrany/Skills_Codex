@@ -107,3 +107,7 @@ See `CONTRIBUTING.md` for the full workflow. Quick checklist below.
 - Add `references/` only when necessary
 - Run `python scripts/generate_skills_index.py` after changes
 - Use `skill-check` and `skill-scanner` when applicable
+
+## License
+
+MIT. See `LICENSE`.
