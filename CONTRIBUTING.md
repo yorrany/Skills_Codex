@@ -13,7 +13,8 @@ Thanks for improving the skills library. This guide covers the minimal workflow 
 
 ## Adding a New Skill
 
-1. Create the folder: `my-skill-name/`
+1. Create the folder under the correct category/subcategory:
+   `category-name/subcategory-name/my-skill-name/`
 2. Add `SKILL.md` with name, description, and usage instructions
 3. Add `references/` only if the skill is too large for one file
 4. Run the index script to update `SKILLS_INDEX.md`

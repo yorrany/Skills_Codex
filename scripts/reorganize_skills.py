@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
-"""Generate SKILLS_INDEX.md with categorized skills.
+"""Reorganize skill folders into category/subcategory hierarchy.
 
 Run from repo root:
-  python scripts/generate_skills_index.py
+  python scripts/reorganize_skills.py
 """
 from __future__ import annotations
 
 from pathlib import Path
 import re
+import shutil
 
 ROOT = Path('.')
-OUTPUT = ROOT / 'SKILLS_INDEX.md'
 
 EXCLUDE_DIRS = {
     '.git',
     '.github',
     'scripts',
 }
-
 
 RULES = [
     # Engineering Process
@@ -130,6 +129,21 @@ RULES = [
 ]
 
 
+def slugify(text: str) -> str:
+    text = text.lower()
+    text = text.replace('&', 'and')
+    text = re.sub(r'[^a-z0-9]+', '-', text)
+    text = text.strip('-')
+    return text
+
+
+def categorize(name: str) -> tuple[str, str] | None:
+    for pattern, (cat, sub) in RULES:
+        if re.search(pattern, name):
+            return cat, sub
+    return None
+
+
 def iter_skill_dirs() -> list[Path]:
     skill_dirs = set()
     for skill_md in ROOT.rglob('SKILL.md'):
@@ -141,72 +155,47 @@ def iter_skill_dirs() -> list[Path]:
         if skill_md.parent == ROOT:
             continue
         skill_dirs.add(skill_md.parent)
-    return sorted(skill_dirs)
+    return sorted(skill_dirs, key=lambda p: len(p.parts), reverse=True)
 
 
-def categorize(name: str) -> tuple[str, str] | None:
-    for pattern, (cat, sub) in RULES:
-        if re.search(pattern, name):
-            return cat, sub
-    return None
-
-
-def build_index():
-    categories: dict[str, dict[str, list[tuple[str, str]]]] = {}
-    uncat: list[tuple[str, str]] = []
-
-    for skill_dir in iter_skill_dirs():
-        name = skill_dir.name
-        rel = str(skill_dir)
-        category = categorize(name)
-        if category is None:
-            uncat.append((name, rel))
-            continue
-        cat, sub = category
-        categories.setdefault(cat, {}).setdefault(sub, []).append((name, rel))
-
-    for cat in categories:
-        for sub in categories[cat]:
-            categories[cat][sub].sort(key=lambda t: t[0])
-    uncat.sort(key=lambda t: t[0])
-
-    lines: list[str] = []
-    lines.append('# Skills Index')
-    lines.append('')
-    lines.append('This file is auto-organized for easy navigation. Use your editor search to jump to a skill quickly.')
-    lines.append('')
-
-    for cat in sorted(categories):
-        lines.append(f'## {cat}')
-        lines.append('')
-        for sub in sorted(categories[cat]):
-            skills_list = categories[cat][sub]
-            lines.append(f'### {sub} ({len(skills_list)})')
-            lines.append('')
-            lines.append(', '.join(f'`{rel}`' for _, rel in skills_list))
-            lines.append('')
-
-    if uncat:
-        lines.append('## Other / Uncategorized')
-        lines.append('')
-        lines.append(f'({len(uncat)} skills)')
-        lines.append('')
-        lines.append(', '.join(f'`{rel}`' for _, rel in uncat))
-        lines.append('')
-
-    OUTPUT.write_text('\n'.join(lines))
-
-    summary = []
-    summary.append('Category summary (counts):')
-    for cat in sorted(categories):
-        total = sum(len(v) for v in categories[cat].values())
-        summary.append(f'- {cat}: {total}')
-    summary.append(f'Uncategorized: {len(uncat)}')
-    print('\n'.join(summary))
+def move_skill_dir(src: Path, dst: Path) -> None:
+    if not src.exists():
+        return
+    if dst.exists():
+        raise RuntimeError(f'target exists: {dst}')
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(src), str(dst))
 
 
 def main() -> None:
-    build_index()
+    moves = []
+    for src in iter_skill_dirs():
+        name = src.name
+        category = categorize(name)
+        if category is None:
+            cat, sub = 'Other', 'Uncategorized'
+        else:
+            cat, sub = category
+
+        cat_dir = slugify(cat)
+        sub_dir = slugify(sub)
+        dst = ROOT / cat_dir / sub_dir / name
+
+        # Skip if already in the desired location
+        if src.resolve() == dst.resolve():
+            continue
+
+        # If already under category/subcategory, skip
+        if len(src.parts) >= 3 and src.parts[0] == cat_dir and src.parts[1] == sub_dir:
+            continue
+
+        moves.append((src, dst))
+
+    for src, dst in moves:
+        move_skill_dir(src, dst)
+        print(f'moved: {src} -> {dst}')
+
+    print(f'completed. moves: {len(moves)}')
 
 
 if __name__ == '__main__':

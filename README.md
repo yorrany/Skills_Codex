@@ -30,11 +30,13 @@ A curated catalog of reusable `SKILL.md` instructions for Codex/agent workflows.
 ## Repository Structure
 
 ```
-<skill-name>/
-  SKILL.md
-  README.md              # optional
-  references/            # optional
-  assets/                # optional
+<category>/
+  <subcategory>/
+    <skill-name>/
+      SKILL.md
+      README.md              # optional
+      references/            # optional
+      assets/                # optional
 ```
 
 ## Catalog Organization
@@ -45,20 +47,20 @@ To make this library easy to navigate, skills are grouped into categories and su
 
 | Category | Skills |
 | --- | ---: |
-| AI & Agents | 106 |
+| AI & Agents | 107 |
 | Backend & APIs | 91 |
 | Cloud & Infra | 167 |
 | Data & ML | 44 |
 | Domain | 39 |
 | Engineering Process | 71 |
-| Frontend & UI | 104 |
+| Frontend & UI | 106 |
 | Integrations & Automation | 114 |
-| Media & Creative | 12 |
+| Media & Creative | 16 |
 | Meta | 69 |
-| Mobile | 9 |
+| Mobile | 10 |
 | Product & Growth | 45 |
 | Security | 78 |
-| Other / Uncategorized | 285 |
+| Other / Uncategorized | 288 |
 
 **Notes**
 - Some skills overlap multiple domains; they are placed in the most likely discovery category.
@@ -93,7 +95,7 @@ If you add or remove skills, update `SKILLS_INDEX.md` to keep the catalog accura
 python scripts/generate_skills_index.py
 ```
 
-This script scans all top-level skill folders and rebuilds `SKILLS_INDEX.md` using the current categorization rules.
+This script scans the category/subcategory hierarchy and rebuilds `SKILLS_INDEX.md` using the current categorization rules.
 
 ## Contributing
 

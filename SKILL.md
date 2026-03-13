@@ -19,7 +19,7 @@ A lightweight guide for navigating and maintaining the skills library in this re
 ## Quick Navigation
 
 - Full categorized index: `SKILLS_INDEX.md`
-- Per-skill instructions: `<skill-name>/SKILL.md`
+- Per-skill instructions: `<category>/<subcategory>/<skill-name>/SKILL.md`
 
 ## How Skills Are Organized
 
